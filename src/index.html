@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Header Section -->
+  <header class="header">
+    <div class="header__top">
+      <div class="header__brand">YOUR HEADLINE</div>
+
+      <!-- Desktop Navigation -->
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="#projects" class="header__nav-link">Projects</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#about" class="header__nav-link">About Us</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#stories" class="header__nav-link">Stories</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#contact" class="header__nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button type="button" class="header__menu-btn" aria-label="Toggle menu">
+        <img src="img/mobile_header_menu_icon.svg" alt="Menu" />
+      </button>
+    </div>
+
+    <div class="header__hero">
+      <div class="header__hero-content">
+        <img src="img/little_logo.png" alt="Project Logo" class="header__logo" />
+
+        <h1 class="header__title">
+          Your<br>
+          Headline<br>
+          Here
+        </h1>
+      </div>
+
+      <p class="header__description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+      </p>
+      <div class="ship__container">
+          <img src="img/ship.png" alt="ship-overlay" class="overlay__ship"/>
+      </div>
+      <div class="wheel__container__header">
+        <img src="img/wheel.png" alt="wheel-overlay" class="wheel__overlay__header"/>
+      </div>
+    </div>
+    
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Content Section -->
+    <section class="content" id="about">
+      <h2 class="content__title">
+        This is the Section
+        Headline, Continues to
+        Two Lines
+      </h2>
+
+      <article class="content__text">
+        <p class="content__paragraph content__paragraph--intro">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+        </p>
+
+        <div class="content__text-container">
+          <p class="content__paragraph">
+            Lorem ipsum dolor sit amet, consectetur elit sit quis ut in duis. Aliquam sit amet duis duis magna aliqua
+            ut sit amet duis duis ut sit duis duis ut sit amet duis duis aliqua ut sit amet duis duis ut sit amet duis
+            duis ut sit amet duis duis ut sit amet duis duis magna aliqua ut sit amet duis duis ut sit amet duis duis
+            ut sit amet duis duis magna aliqua ut sit amet duis duis ut sit amet duis duis.
+          </p>
+
+          <p class="content__paragraph">
+            Aliqua ut sit amet duis duis ut sit amet duis duis magna aliqua ut sit amet duis duis ut sit amet duis
+            duis ut sit amet duis duis magna aliqua ut sit amet duis duis ut sit amet duis duis ut sit amet duis duis
+            magna aliqua ut sit amet duis duis ut sit amet duis duis ut sit amet duis duis magna aliqua ut sit amet
+            duis duis ut sit amet duis duis.
+          </p>
+        </div>        
+      </article>
+
+      <button type="button" class="content__button">READ MORE</button>
+      <div class="wheel__container__content__left">
+        <img src="img/wheel_gray_left.png" alt="wheel-overlay" class="wheel__overlay__content__left"/>
+      </div>
+      <div class="wheel__container__content__right">
+        <img src="img/wheel_gray_right.png" alt="wheel-overlay" class="wheel__overlay__content__right"/>
+      </div>
+    </section>
+
+    <!-- Video Section (Background Image Section) -->
+    <section class="video" id="stories">
+      <h2 class="video__title">
+        Learn more<br>
+        about our culture...
+      </h2>
+
+      <!--<img src="img/play_button.png" alt="Play video" class="video__play-btn" />-->
+      <svg width="145" height="144" viewBox="0 0 145 144" fill="none" xmlns="http://www.w3.org/2000/svg" class="video__play-btn">
+        <ellipse class="video__play-btn-circle" cx="72.5" cy="71.7342" rx="72.5" ry="71.7342" fill="white"/>
+        <path class="video__play-btn-triangle" d="M102.268 69.4314C103.843 70.1382 103.843 72.3739 102.268 73.0807L58.4023 92.7694C57.079 93.3634 55.5833 92.3953 55.5833 90.9448L55.5833 51.5673C55.5833 50.1168 57.079 49.1487 58.4023 49.7426L102.268 69.4314Z" fill="#41576B"/>
+      </svg>
+
+      <p class="video__description">
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+
+    <div class="footer__info">
+      <address class="footer__address">
+        123 Street,<br>
+        Anytown, USA 12345
+      </address>
+
+      <a href="mailto:hello@website.com" class="footer__email">
+        hello@website.com
+      </a>
+    </div>
+
+    <div class="footer__brand">
+      <img src="img/little_logo.png" alt="Project Logo" class="footer__logo" />
+      <p class="footer__brand-text">PROJECT</p>
+    </div>
+
+    <p class="footer__copyright">
+      © <span id="year"></span> Project. All rights reserved.
+    </p>
+    <div class="wheel__container__footer">
+        <img src="img/wheel.png" alt="wheel-overlay" class="wheel__overlay__footer"/>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuBtn = document.querySelector('.header__menu-btn');
+      const nav = document.querySelector('.header__nav');
+      const body = document.body;
+
+      // Toggle menu on button click
+      menuBtn.addEventListener('click', function () {
+        menuBtn.classList.toggle('is-open');
+        nav.classList.toggle('is-open');
+
+        // Prevent body scroll when menu is open
+        if (nav.classList.contains('is-open')) {
+          body.style.overflow = 'hidden';
+        } else {
+          body.style.overflow = '';
+        }
+      });
+
+      // Close menu when clicking on nav links
+      const navLinks = document.querySelectorAll('.header__nav-link');
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          menuBtn.classList.remove('is-open');
+          nav.classList.remove('is-open');
+          body.style.overflow = '';
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function (e) {
+        if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
+          menuBtn.classList.remove('is-open');
+          nav.classList.remove('is-open');
+          body.style.overflow = '';
+        }
+      });
+
+      // Close menu on window resize to desktop
+      window.addEventListener('resize', function () {
+        if (window.innerWidth >= 768) {
+          menuBtn.classList.remove('is-open');
+          nav.classList.remove('is-open');
+          body.style.overflow = '';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+<script>
+  document.getElementById('year').innerText = new Date().getFullYear();
+</script>

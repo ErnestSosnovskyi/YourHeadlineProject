@@ -1,0 +1,4 @@
+// Main SCSS file that imports base, desktop and mobile styles
+@use 'style';
+@use 'desktop';
+@use 'mobile';

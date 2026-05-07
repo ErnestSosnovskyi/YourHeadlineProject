@@ -1,0 +1,125 @@
+// Import mixins
+@use 'style' as *;
+
+// Desktop media queries
+@media (width >= 768px) {
+  body {
+    max-width: none;
+  }
+
+  .header {
+    background: none;
+    position: relative;
+    overflow: hidden;
+    padding: 49px 117px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 76%;
+      height: 100%;
+      background: linear-gradient(244deg, #536f89 50.92%, #060606 157.84%);
+      clip-path: polygon(0 0, 100% 0, 74% 100%, 0% 100%);
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background:
+        linear-gradient(
+          135deg,
+          rgb(45 52 54 / 80%) 0%,
+          rgb(99 110 114 / 80%) 100%
+        ),
+        url('../img/header_image.jpg') center/cover;
+      z-index: 0;
+    }
+
+    &__top {
+      z-index: 2;
+      margin: 0;
+      align-items: flex-end;
+      width: 76%;
+    }
+
+    &__brand {
+      margin-left: 52px;
+    }
+
+    &__menu-btn {
+      display: none;
+    }
+
+    &__nav {
+      display: block;
+    }
+
+    &__hero {
+      z-index: 2;
+      display: block;
+      margin: 136px 0 38px;
+
+      &-content {
+        display: flex;
+        z-index: 2;
+        align-items: flex-start;
+      }
+    }
+
+    &__content {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    &__logo {
+      width: 234px;
+      height: 264px;
+    }
+
+    &__title {
+      text-align: left;
+      font-size: 75px;
+      line-height: 112.667%;
+    }
+
+    &__description {
+      margin-left: 48px;
+      text-align: left;
+    }
+  }
+
+  .content {
+    &__title {
+      width: 669px;
+    }
+
+    &__text-container {
+      display: flex;
+      flex-direction: row;
+      gap: 83px;
+      padding: 0 150px;
+    }
+
+    &__paragraph--intro {
+      width: 426px;
+      margin: 0 auto;
+    }
+  }
+
+  .footer {
+    flex-direction: row;
+    justify-content: center;
+    padding: 39px 150px 31px;
+
+    &__copyright {
+      margin-top: 74px;
+    }
+  }
+}

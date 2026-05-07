@@ -1,0 +1,562 @@
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.15; /* 1. Correct the line height in all browsers. */
+  -webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
+  tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
+}
+
+/*
+Sections
+========
+*/
+body {
+  margin: 0; /* Remove the margin in all browsers. */
+}
+
+/*
+Text-level semantics
+====================
+*/
+/**
+Add the correct font weight in Chrome and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+/**
+Correct table border color inheritance in Chrome and Safari. (https://issues.chromium.org/issues/40615503, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+table {
+  border-color: currentcolor;
+}
+
+/*
+Forms
+=====
+*/
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+legend {
+  padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Interactive
+===========
+*/
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../fonts/source-sans-pro/SourceSansPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../fonts/source-sans-pro/SourceSansPro-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Oswald;
+  src: url("../fonts/oswald/Oswald-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Oswald;
+  src: url("../fonts/oswald/Oswald-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@keyframes zoomInRotate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(360deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+:root {
+  --color-white: #fff;
+  --color-white-70: rgb(255 255 255 / 70%);
+  --color-white-40: rgb(255 255 255 / 40%);
+  --color-dark: #060606;
+  --color-gray-dark: #464547;
+  --color-gray: #666;
+  --color-primary: #3e5366;
+  --color-accent: #536F89;
+  --color-play-btn: #43586d;
+  --font-primary: "Source Sans Pro";
+  --font-secondary: "Oswald";
+  --border-radius-sm: 18px;
+}
+
+body {
+  color: #fff;
+}
+
+.header {
+  background: linear-gradient(205deg, rgba(83, 111, 137, 1) 38.76%, rgba(6, 6, 6, 1) 104.9%);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 44.5px 24px 64.76px 32px;
+}
+.header__brand {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 80%;
+  letter-spacing: 2px;
+}
+.header__menu-btn {
+  border: none;
+  cursor: pointer;
+  font-style: normal;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1001;
+  width: 30px;
+  height: 30px;
+}
+.header__menu-btn img {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+.header__menu-btn.is-open img {
+  opacity: 0;
+}
+.header__menu-btn.is-open::before, .header__menu-btn.is-open::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+.header__menu-btn.is-open::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.header__menu-btn.is-open::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.header__nav {
+  display: none;
+}
+.header__nav-list {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.header__nav-item {
+  margin: 0;
+}
+.header__nav-link {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 114.286%;
+  letter-spacing: 2.8px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.header__nav-link:hover {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 2px;
+}
+.header__nav-link:visited {
+  color: #fff;
+}
+.header__hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  flex: 1;
+}
+.header__logo {
+  width: 211px;
+  height: 238px;
+  transform: scale(0.5) rotate(-20deg);
+  animation: zoomInRotate 1s ease-out forwards;
+}
+.header__title {
+  font-family: Oswald, sans-serif;
+  font-style: normal;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 136%;
+  text-align: center;
+  margin-top: 18px;
+}
+.header__description {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 133.333%;
+  text-align: center;
+  width: 310px;
+  margin-bottom: 81px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  flex: 1;
+  padding: 65px 15px 116px 27px;
+}
+.content__title {
+  color: #464547;
+  font-family: Oswald, sans-serif;
+  font-style: normal;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 133.333%;
+  text-align: center;
+  width: 355px;
+}
+.content__text {  
+  margin-bottom: 40px;
+  text-align: left;
+}
+.content__paragraph {
+  color: #666;
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 137.5%;
+}
+.content__paragraph--intro {
+  text-align: center;
+  font-size: 24px;
+  line-height: 133.333%;
+}
+.content__button {
+  border: none;
+  cursor: pointer;
+  font-style: normal;
+  font-family: Oswald, sans-serif;
+  font-style: normal;
+  text-transform: uppercase;
+  border-radius: var(--border-radius-sm);
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 185.714%;
+  letter-spacing: 1.4px;
+  text-align: center;
+  padding: 5.28px 17px 6.33px 18px;
+}
+.content__button:hover {
+  animation: wiggle 2s ease-in-out infinite;
+  opacity: 0.9;
+  transform: rotate(15deg);
+  transform-origin: left center;
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  flex: 1;
+  padding: 72px 0 73px;
+  background: linear-gradient(135deg, rgba(45, 52, 54, 0.8) 0%, rgba(99, 110, 114, 0.8) 100%), url("../img/IMG_9320.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.video__title {
+  font-family: Oswald, sans-serif;
+  font-style: normal;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 133.333%;
+  text-align: center;
+}
+.video__play-btn {
+  margin-top: 91px;
+  margin-bottom: 82px;
+  cursor: pointer;
+}
+.video__play-btn-circle, .video__play-btn-triangle {
+  transition: fill 0.3s ease;
+}
+.video__play-btn:hover .video__play-btn-circle {
+  fill: var(--color-white);
+}
+.video__play-btn:hover .video__play-btn-triangle {
+  fill: var(--color-play-btn);
+}
+.video__description {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 133.333%;
+  text-align: center;
+  width: 396.3158px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  flex: 1;
+  background: var(--color-dark);
+  padding: 18px 0 40px;
+}
+.footer__logo {
+  width: 65px;
+  height: 74px;
+  margin-bottom: 9px;
+}
+.footer__brand-text {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 88.889%;
+  text-align: center;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  letter-spacing: 3.6px;
+  margin-bottom: 26.01px;
+}
+.footer__address, .footer__email, .footer__copyright {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 118.75%;
+}
+.footer__email {
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-bottom: 19px;
+}
+.footer__email:hover {
+  color: #fff;
+}
+.footer__address {
+  text-align: center;
+  margin-bottom: 18px;
+}
+.footer__copyright {
+  text-align: center;
+}
+
+@media (width <= 767px) {
+  body {
+    max-width: 480px;
+  }
+  .header__nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(205deg, #755cf5 38.76%, #060606 104.9%);
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+  .header__nav.is-open {
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header__nav-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 40px;
+  }
+  .header__nav-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+  }
+  .header__nav.is-open .header__nav-item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .header__nav.is-open .header__nav-item:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  .header__nav.is-open .header__nav-item:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .header__nav.is-open .header__nav-item:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  .header__nav.is-open .header__nav-item:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+  .header__nav-link {
+    font-size: 24px;
+    letter-spacing: 4.8px;
+  }
+  .header__nav-link:hover {
+    border-bottom: 3px solid #fff;
+    padding-bottom: 5px;
+  }
+}

@@ -1,0 +1,75 @@
+// Import mixins
+@use 'style' as *;
+
+// Mobile media queries
+@media (width <= 767px) {
+  .header {
+    &__nav {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(205deg, #536f89 38.76%, #060606 104.9%);
+      z-index: 1000;
+      transition: left 0.3s ease;
+
+      &.is-open {
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &-list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        gap: 40px;
+      }
+
+      &-item {
+        @include animation-menu-item-fade;
+
+        &:nth-child(1) {
+          .header__nav.is-open & {
+            transition-delay: 0.1s;
+          }
+        }
+
+        &:nth-child(2) {
+          .header__nav.is-open & {
+            transition-delay: 0.2s;
+          }
+        }
+
+        &:nth-child(3) {
+          .header__nav.is-open & {
+            transition-delay: 0.3s;
+          }
+        }
+
+        &:nth-child(4) {
+          .header__nav.is-open & {
+            transition-delay: 0.4s;
+          }
+        }
+      }
+
+      &-link {
+        font-size: 24px;
+        letter-spacing: 4.8px;
+
+        &:hover {
+          border-bottom: 3px solid #fff;
+          padding-bottom: 5px;
+        }
+      }
+
+      &__brand {
+        margin-right: 15px;
+      }
+    }
+  }
+}
